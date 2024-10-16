@@ -3,6 +3,8 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 import SideBar from "./components/SideBar.vue";
 import AppHeader from "./components/AppHeader.vue";
+import Board from "./components/Board.vue";
+
 const store = useStore();
 const rail = computed(() => store.getters.rail);
 const widthToReduce = computed(() => (rail.value ? 256 : 56));
@@ -25,7 +27,9 @@ const appContentStyle = computed(() => ({
       <div style="flex-grow: 0; flex-basis: 10%">
         <AppHeader />
       </div>
-      <div style="flex-grow: 0; flex-basis: 90%"></div>
+      <div style="flex-grow: 0; flex-basis: 90%">
+        <Board />
+      </div>
     </div>
   </v-app>
 </template>
